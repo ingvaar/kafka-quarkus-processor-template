@@ -1,0 +1,12 @@
+*
+!src/*
+!build.gradle.kts
+!gradle.properties
+!settings.gradle.kts
+!gradlew
+!gradle
+# *
+# !build/*-runner
+# !build/*-runner.jar
+# !build/lib/*
+# !build/quarkus-app/*
