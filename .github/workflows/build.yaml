@@ -20,6 +20,9 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v3
 
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
       - name: Build docker image
         run: |
           docker build . \
@@ -43,6 +46,10 @@ jobs:
           maven.credentials.username=${{ secrets.MAVEN_REPOSITORY_USERNAME }}
           maven.credentials.password=${{ secrets.MAVEN_REPOSITORY_PASSWORD }}
           EOF
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
       - name: Build native Quarkus app
         run: |
           ./gradlew build -Dquarkus.package.type=native --no-daemon

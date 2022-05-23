@@ -85,6 +85,10 @@ jobs:
           maven.credentials.username=${{ secrets.MAVEN_REPOSITORY_USERNAME }}
           maven.credentials.password=${{ secrets.MAVEN_REPOSITORY_PASSWORD }}
           EOF
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
       - name: Lint kotlin files
         uses: gradle/gradle-build-action@v2
         with:
