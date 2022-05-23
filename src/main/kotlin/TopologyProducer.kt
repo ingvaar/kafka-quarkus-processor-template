@@ -12,11 +12,13 @@ class TopologyProducer {
     lateinit var topicIn: String
     @field:ConfigProperty(name = "topic.out", defaultValue = "topic.out")
     lateinit var topicOut: String
-    
+
     private val logger: Logger = LoggerFactory.getLogger(TopologyProducer::class.java)
 
     @Produces
     fun buildTopology(): Topology {
+
+        logger.info("Hello world!")
 
         return StreamsBuilder().apply {
             // Add topology here

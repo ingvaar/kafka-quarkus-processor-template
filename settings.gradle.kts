@@ -11,4 +11,3 @@ pluginManagement {
     }
 }
 rootProject.name = "kafka-quarkus-processor"
-
